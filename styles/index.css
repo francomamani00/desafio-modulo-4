@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Flamenco&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: "Poppins", "Flamenco", sans-serif;
+}
+
+/* WELCOME CONTENT */
+.welcome__content {
+  background: url(../images/indexbackgr.png);
+  height: 85vh;
+  width: 100%;
+  overflow: auto;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcome__title {
+  color: white;
+  font-size: 48px;
+  text-shadow: -1px 2px 0 #34d16e, -2px 4px 0 #0a0e27;
+}
+.welcome__subtitle {
+  color: white;
+  font-size: 32px;
+  text-shadow: -0.5px 1px 0 #34d16e, -1px 2px 0 #0a0e27;
+}
+
+/* ABOUT ME CONTENT */
+
+.aboutme__content {
+  background: linear-gradient(147deg, rgb(44, 62, 80) 0%, #000000 70%);
+  display: flex;
+  flex-direction: column;
+  padding: 60px 32px 100px 32px;
+}
+.aboutme__content-img {
+  display: none;
+}
+@media (min-width: 761px) {
+  .aboutme__content {
+    flex-direction: row;
+    padding: 60px 60px 0px 50px;
+    gap: 50px;
+  }
+  .aboutme__content-img {
+    display: inherit;
+  }
+}
+
+.aboutme__img {
+  width: 310px;
+  height: 420px;
+}
+.aboutme__h2 {
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  margin: 0;
+  font-weight: 800;
+}
+.aboutme__p {
+  margin-top: 50px;
+  color: white;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+@media (min-width: 761px) {
+  .aboutme__h2 {
+    font-size: 36px;
+  }
+  .aboutme__p {
+    margin-top: 20px;
+    font-size: 21px;
+    line-height: 1.3;
+    margin-bottom: 0px;
+  }
+}
+@media (min-width:961px){
+  .aboutme__h2 {
+    font-size: 48px;
+  }
+  .aboutme__p{
+    margin-top: 25px;
+    font-size: 24px;
+    line-height: 1.6;
+    
+  }
+}
