@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Franco</title>
+
+    <!-- link header -->
+    <script defer src="./scripts/cms.js"></script>
+
+    <link rel="stylesheet" href="./componentes/header/header.css" />
+    <script defer src="./componentes/header/header.js"></script>
+
+    <link rel="stylesheet" href="./componentes/footer/footer.css" />
+    <script defer src="./componentes/footer/footer.js"></script>
+
+    <link rel="stylesheet" href="./styles/servicios.css" />
+    <script defer src="./scripts/servicios.js"></script>
+  </head>
+
+  <body>
+    <header class="header"></header>
+
+    <section class="services">
+      <div class="services__content">
+        <h2 class="services__title">Mis servicios</h2>
+        <div class="services__template-content">
+          <!-- aca voy a poner el template cards, por eso no tiene nada -->
+        </div>
+        <template id="services__template">
+          <div class="services__card">
+            <img src="" alt="" class="services__img" />
+            <div class="services__card-info">
+              <h3 class="services__card-title"></h3>
+              <p class="services__card-parrafo"></p>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <section class="footer"></section>
+  </body>
+</html>

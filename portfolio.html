@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Franco</title>
+
+    <!-- link header -->
+    <script defer src="./scripts/cms.js"></script>
+
+    <link rel="stylesheet" href="./componentes/header/header.css" />
+    <script defer src="./componentes/header/header.js"></script>
+
+    <link rel="stylesheet" href="./componentes/footer/footer.css" />
+    <script defer src="./componentes/footer/footer.js"></script>
+
+    <link rel="stylesheet" href="./styles/portfolio.css" />
+    <script defer src="./scripts/portfolio.js"></script>
+  </head>
+
+  <body>
+    <header class="header"></header>
+
+    <section class="portfolio">
+      <div class="portfolio__content">
+        <h2 class="portfolio__title">Portfolio</h2>
+        <div class="portfolio__template-content">
+          <!-- aca voy a poner el template cards, por eso no tiene nada -->
+        </div>
+        <template id="portfolio__template">
+          <div class="portfolio__card">
+            <img src="" alt="" class="portfolio__img" />
+            <div class="portfolio__card-info">
+              <h3 class="portfolio__card-title"></h3>
+              <p class="portfolio__card-parrafo"></p>
+              <div class="portfolio__card-content-link">
+                <a target="_BLANK" href="" class="portfolio__card-url"
+                  >Ver más...</a
+                >
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </section>
+
+    <section class="footer"></section>
+  </body>
+</html>

@@ -22,22 +22,22 @@ function addHeader(elemento) {
       />
     </div>
     <div class="header-comp__window-menu-link">
-      <a class="header__nav-link--window-open" href="./portfolio.html"
+      <a target="_BLANK" class="header__nav-link--window-open" href="./portfolio.html"
         >Portfolio</a
       >
-      <a class="header__nav-link--window-open" href="./servicios.html"
+      <a target="_BLANK" class="header__nav-link--window-open" href="./servicios.html"
         >Servicios</a
       >
-      <a class="header__nav-link--window-open" href="./contacto.html"
+      <a target="_BLANK" class="header__nav-link--window-open" href="./contacto.html"
         >Contacto</a
       >
     </div>
   </div>
   <div class="header-comp__menu-desktop">
     <div class="header-comp__links-container">
-      <a class="header__nav-link" href="./portfolio.html">Portfolio</a>
-      <a class="header__nav-link" href="./servicios.html">Servicios</a>
-      <a class="header__nav-link" href="./contacto.html">Contacto</a>
+      <a target="_BLANK" class="header__nav-link" href="./portfolio.html">Portfolio</a>
+      <a target="_BLANK" class="header__nav-link" href="./servicios.html">Servicios</a>
+      <a target="_BLANK" class="header__nav-link" href="./contacto.html">Contacto</a>
     </div>
   </div>
 </div>

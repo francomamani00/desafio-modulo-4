@@ -73,10 +73,9 @@ function addServicesCard(params = {}) {
     ".services__template-content"
   );
   //img
-
   templateServices.content.querySelector(".services__img").src = params.image;
-  //title
 
+  //title
   templateServices.content.querySelector(".services__card-title").textContent =
     params.title;
   //parrafo
@@ -99,19 +98,20 @@ function getServicesCard() {
       const params = data.items.map((i) => {
         return {
           title: i.fields.titulo,
-          parrafo: i.fields.parrafo,
+          parrafo: i.fields.descripcion,
           imageID: i.fields.imagen.sys.id,
           includes: data.includes.Asset,
         };
       });
       params.forEach((e) => {
-        let idEncontrado = buscarAsset(e.imageID, e.includes);
+        let idEncontrado = buscarAssetS(e.imageID, e.includes);
         e.image = "https:" + idEncontrado.fields.file.url;
       });
+
       return params;
     });
 }
-function buscarAsset(assetID, includes) {
+function buscarAssetS(assetID, includes) {
   const imagen = includes.find((i) => {
     return i.sys.id == assetID;
   });
@@ -121,6 +121,68 @@ function resolvePromiseServices() {
   getServicesCard().then((services) => {
     for (const s of services) {
       addServicesCard(s);
+    }
+  });
+}
+
+// PORTFOLIO SECTION
+function addPortfolioCard(params = {}) {
+  const templatePortfolio = document.querySelector("#portfolio__template");
+  const containerPortfolio = document.querySelector(
+    ".portfolio__template-content"
+  );
+
+  templatePortfolio.content.querySelector(".portfolio__img").src = params.image;
+
+  templatePortfolio.content.querySelector(
+    ".portfolio__card-title"
+  ).textContent = params.title;
+
+  templatePortfolio.content.querySelector(
+    ".portfolio__card-parrafo"
+  ).textContent = params.parrafo;
+
+  templatePortfolio.content.querySelector(".portfolio__card-url").href =
+    params.url;
+  const clone = document.importNode(templatePortfolio.content, true);
+  containerPortfolio.appendChild(clone);
+}
+
+function getPortfolioCard() {
+  return fetch(
+    "https://cdn.contentful.com/spaces/hzma5z61vjs4/environments/master/entries?access_token=6l3gfvRte1iRjrtVzhiTZ39sh-SehCkKxWm3md44ozU&content_type=portfolio"
+  )
+    .then((response) => response.json())
+    .then((data) => {
+      const params = data.items.map((i) => {
+        return {
+          title: i.fields.titulo,
+          parrafo: i.fields.descripcion,
+          url: i.fields.url,
+          imageID: i.fields.imagen.sys.id,
+          includes: data.includes.Asset,
+        };
+      });
+      params.forEach((e) => {
+        let idEncontrado = buscarAssetP(e.imageID, e.includes);
+        e.image = "https:" + idEncontrado.fields.file.url;
+      });
+      // console.log(params);
+      return params;
+    });
+}
+function buscarAssetP(assetID, includes) {
+  const imagen = includes.find((i) => {
+    return i.sys.id == assetID;
+  });
+  return imagen;
+}
+
+function resolvePromisePortfolio() {
+  getPortfolioCard().then((portfolio) => {
+    for (const p of portfolio) {
+      console.log(p);
+      addPortfolioCard(p);
     }
   });
 }
